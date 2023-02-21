@@ -1,8 +1,8 @@
+import css from "../Movie/Movie.module.css";
 import {urls} from "../../configs";
-import css from './Movie.module.css'
 
-const Movie = ({movie}) => {
-    const {title,poster_path} = movie;
+const SearchedMovie = ({movie}) => {
+    const {title, poster_path} = movie;
     return (
         <div className={css.Movie}>
             <div className={css.Title}><p>{title}</p></div>
@@ -11,4 +11,4 @@ const Movie = ({movie}) => {
     );
 };
 
-export {Movie};
+export {SearchedMovie};

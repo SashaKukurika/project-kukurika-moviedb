@@ -1,10 +1,15 @@
-import css from './App.css';
-import {Movies} from "./components/Movies/Movies";
+import {Route, Routes} from "react-router-dom";
+import {MainLayout} from "./layouts";
+import {MoviesPage} from "./pages";
+
 const App = () => {
     return (
-        <div className={css.App}>
-            <Movies/>
-        </div>
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
+                <Route index element={<MoviesPage/>}/>
+            </Route>
+
+        </Routes>
     );
 };
 

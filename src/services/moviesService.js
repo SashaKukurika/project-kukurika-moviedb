@@ -2,7 +2,7 @@ import {axiosService} from "./axiosService";
 import {urls} from "../configs";
 
 const moviesService = {
-    getAll: () => axiosService.get(urls.movies),
+    getAll: (page =1) => axiosService.get(urls.movies, {params: {page}}),
     search: (word) => axiosService.get(`${urls.search}${word}`),
 };
 

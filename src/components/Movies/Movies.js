@@ -1,19 +1,51 @@
-import {useEffect, useState} from "react";
-import {moviesService} from "../../services";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+
 import {Movie} from "../Movie/Movie";
+import {movieAction} from "../../redux";
+import css from './Movies.module.css';
+import {useSearchParams} from "react-router-dom";
 
 const Movies = () => {
-// todo show all and after do slices
-    const [movies, setMovies] = useState([]);
+
+    const {movies} = useSelector(state => state.movies);
+    const dispatch = useDispatch();
+    const [query, setQuery] = useSearchParams({page: '1'});
 
     useEffect(() => {
-        moviesService.getAll().then(({data}) => console.log(data))
-    }, [setMovies]);
+        dispatch(movieAction.getAll({page: query.get('page')}))
+    }, [dispatch, query]);
 
     return (
         <div>
-            data
-            {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+            <div className={css.Movies}>
+                {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+            </div>
+
+            <div className={css.Pagination}>
+
+                {/*<button disabled={!(+query.get('page') > 1)}*/}
+                {/*        onClick={() => setQuery(query => ({page: +query.get('page') + 5}))}>*/}
+                {/*    {+query.get('page')-5}*/}
+                {/*</button>*/}
+
+                <button className={css.Button} disabled={!(+query.get('page') > 1)}
+                        onClick={() => setQuery(query => ({page: +query.get('page') - 1}))}>
+                    {'<'}
+                </button>
+
+                <div className={css.PageNumber}>{+query.get('page')}</div>
+
+                <button className={css.Button} disabled={!(+query.get('page') < 500)}
+                        onClick={() => setQuery(query => ({page: +query.get('page') + 1}))}>
+                    {'>'}
+                </button>
+
+                {/*<button disabled={!(+query.get('page') < 500)}*/}
+                {/*        onClick={() => setQuery(query => ({page: +query.get('page') + 5}))}>*/}
+                {/*    {+query.get('page')+5}*/}
+                {/*</button>*/}
+            </div>
         </div>
     );
 };

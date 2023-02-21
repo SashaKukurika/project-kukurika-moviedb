@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.Movies {
+    display: flex;
+    flex-flow: wrap;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.Pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    height: 70px;
+}
+
+.PageNumber {
+    width: 5%;
+    border: 1px solid black;
+    text-align: center;
+    height: 25px;
+    margin: 2px;
+}
+
+.Button {
+    height: 25px;
+    margin: 2px;
+    width: 4%;
+}
+::-webkit-scrollbar{
+    display: none;
+}
