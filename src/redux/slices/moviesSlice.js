@@ -8,7 +8,6 @@ const initialState = {
     loading: null,
     movieById: null,
     searchMovies: [],
-
 }
 
 const getAll = createAsyncThunk(
@@ -74,13 +73,6 @@ const moviesSlice = createSlice({
                 state.movieById = action.payload;
 
             })
-            // .addCase(getById.rejected, (state, action) => {
-            //     state.errors = action.payload
-            //     state.loading = false
-            // })
-            // .addCase(getById.pending, (state) => {
-            //     state.loading = true
-            // })
             .addCase(searchMovie.fulfilled, (state, action) => {
                 state.loading = false
                 state.searchMovies = action.payload

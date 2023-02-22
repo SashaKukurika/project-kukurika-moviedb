@@ -1,12 +1,13 @@
 import css from './Genres.module.css'
+import {Link} from "react-router-dom";
 const Genres = ({genre}) => {
 
-    const {name} = genre;
+    const {name,id} = genre;
 
     return (
-        <div className={css.Genre}>
+        <Link to={id.toString()} className={css.Genre}>
             {name}
-        </div>
+        </Link>
     );
 };
 

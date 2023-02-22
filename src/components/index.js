@@ -6,3 +6,5 @@ export * from './MovieDetails/MovieDetails';
 export * from './MovieDetailsRender/MovieDetailsRender';
 export * from './Genres/Genres';
 export * from './YoutubeEmbed/YoutubeEmbed';
+export * from './SelectedGenreMovies/SelectedGenreMovies';
+export * from './SelectedGenreMovie/SelectedGenreMovie';
