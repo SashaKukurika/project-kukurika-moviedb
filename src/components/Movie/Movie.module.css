@@ -12,6 +12,20 @@
     height: auto;
     margin-left: calc((100% - 80%) / 5);
     margin-bottom: calc((100% - 80%) / 5);
+    color: black;
+}
+
+.Link {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    width: 20%;
+    height: auto;
+    margin-left: calc((100% - 80%) / 5);
+    margin-bottom: calc((100% - 80%) / 5);
 }
 
 img {

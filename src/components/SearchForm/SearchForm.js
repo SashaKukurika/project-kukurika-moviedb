@@ -4,7 +4,7 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {searchValidator} from "../../validators";
 import {movieAction} from "../../redux";
 import {useDispatch, useSelector} from "react-redux";
-import {SearchedMovie} from "../SearchedMovie/SearchedMovie";
+import {Movie} from "../Movie/Movie";
 
 const SearchForm = () => {
 
@@ -17,12 +17,10 @@ const SearchForm = () => {
     });
 
     const search = async (searchWords) => {
-        const getMovie = await dispatch(movieAction.searchMovie(searchWords));
-        console.log('after dispatch', getMovie);
+        await dispatch(movieAction.searchMovie(searchWords));
         reset();
     };
-
-// todo не ідуть далі дані або напевно не ререндерить сторінку
+    // todo щоб зникали попередні пошуки
     return (
         <div>
             <form onSubmit={handleSubmit(search)}>
@@ -30,7 +28,7 @@ const SearchForm = () => {
                 <button>Search</button>
             </form>
 
-            {searchMovies && searchMovies.map(movie => <SearchedMovie key={movie.id} movie={movie}/>)}
+            {searchMovies && searchMovies.map(movie => <Movie key={movie.id} movie={movie}/>)}
         </div>
     );
 };

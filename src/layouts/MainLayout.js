@@ -6,8 +6,8 @@ const MainLayout = () => {
         <div>
             Main Layout
             <Header/>
-            <SearchForm/>
-            {/*<Outlet/>*/}
+            {/*<SearchForm/>*/}
+            <Outlet/>
         </div>
     );
 };

@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+.Movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    width: 50%;
+    height: auto;
+    margin-left: calc((100% - 80%) / 5);
+    margin-bottom: calc((100% - 80%) / 5);
+    color: black;
+}
+
+img {
+    width: 100%;
+    padding: 5px;
+    height: auto;
+}

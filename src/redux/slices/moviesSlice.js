@@ -6,7 +6,7 @@ const initialState = {
     movies: [],
     errors: null,
     loading: null,
-    selectedMovie: null,
+    movieById: null,
     searchMovies: [],
 
 }
@@ -18,6 +18,19 @@ const getAll = createAsyncThunk(
             const {data:{results}} = await moviesService.getAll(page);
             console.log(results);
             return results;
+        } catch (e) {
+            return rejectWithValue(e.response.data.errors);
+        }
+    }
+);
+
+const getById = createAsyncThunk(
+    'movieSlice/getById',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            const {data} = await moviesService.getById(id);
+            console.log(data);
+            return [data];
         } catch (e) {
             return rejectWithValue(e.response.data.errors);
         }
@@ -41,11 +54,7 @@ const searchMovie = createAsyncThunk(
 const moviesSlice = createSlice({
     name: 'moviesSlice',
     initialState,
-    reducers: {
-        setSelectedMovie: (state, action) => {
-            state.selectedMovie = action.payload
-        },
-    },
+    reducers: {},
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
@@ -60,6 +69,18 @@ const moviesSlice = createSlice({
             .addCase(getAll.pending, (state) => {
                 state.loading = true
             })
+            .addCase(getById.fulfilled, (state, action) => {
+                state.loading = false
+                state.movieById = action.payload;
+
+            })
+            // .addCase(getById.rejected, (state, action) => {
+            //     state.errors = action.payload
+            //     state.loading = false
+            // })
+            // .addCase(getById.pending, (state) => {
+            //     state.loading = true
+            // })
             .addCase(searchMovie.fulfilled, (state, action) => {
                 state.loading = false
                 state.searchMovies = action.payload
@@ -67,12 +88,12 @@ const moviesSlice = createSlice({
 
 });
 
-const {reducer: movieReducer, actions: {setSelectedMovie}} = moviesSlice;
+const {reducer: movieReducer} = moviesSlice;
 
 const movieAction = {
-    setSelectedMovie,
     getAll,
-    searchMovie
+    searchMovie,
+    getById
 }
 
 export {
