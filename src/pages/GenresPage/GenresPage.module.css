@@ -1,0 +1,9 @@
+.GenresPage {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background: var(--background-main);
+}

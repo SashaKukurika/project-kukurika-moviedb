@@ -1,12 +1,12 @@
 import {Outlet} from "react-router-dom";
-import {Header, SearchForm} from "../components";
+
+import {Header} from "../components";
+import css from './MainLayout.module.css'
 
 const MainLayout = () => {
     return (
-        <div>
-            Main Layout
+        <div className={css.MainLayout}>
             <Header/>
-            {/*<SearchForm/>*/}
             <Outlet/>
         </div>
     );

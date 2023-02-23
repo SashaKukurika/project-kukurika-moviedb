@@ -17,7 +17,7 @@ const Movies = () => {
     }, [dispatch, query]);
 
     return (
-        <div>
+        <div className={css.BgMovies}>
             <div className={css.Movies}>
                 {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
             </div>

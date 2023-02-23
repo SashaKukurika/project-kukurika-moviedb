@@ -16,14 +16,14 @@ const Header = () => {
 
     return (
         <div className={css.Header}>
-            <NavLink to={'movies'}>movies</NavLink>
-            <NavLink to={'genres'}>genres</NavLink>
-            <NavLink to={'search'}>search</NavLink>
+            <NavLink to={'movies'}><div className={css.headerLink}>Movies</div></NavLink>
+            <NavLink to={'genres'}><div className={css.headerLink}>Genres</div></NavLink>
+            <NavLink to={'search'}><div className={css.headerLink}>Search</div></NavLink>
             <div>
-                <button onClick={handleLightThemeClick}>Light</button>
-                <button onClick={handleDarkThemeClick}>Dark</button>
+                <button className={css.btn} onClick={handleLightThemeClick}>Light</button>
+                <button className={css.btn} onClick={handleDarkThemeClick}>Dark</button>
             </div>
-            <img className={css.User} src="https://icons-for-free.com/iconfiles/png/512/avatar+human+people+profile+user+icon-1320168139431219590.png" alt="user"/>
+            <div className={css.User}><p>SK</p></div>
         </div>
     );
 };
