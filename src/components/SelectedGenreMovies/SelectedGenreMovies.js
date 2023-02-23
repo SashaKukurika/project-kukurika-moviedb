@@ -14,7 +14,7 @@ const SelectedGenreMovies = ({id}) => {
 
     useEffect(() => {
         dispatch(genresAction.getById({id:id, page: query.get('page')}));
-    }, [dispatch])
+    }, [dispatch, query, id])
 
     return (
         <div>
