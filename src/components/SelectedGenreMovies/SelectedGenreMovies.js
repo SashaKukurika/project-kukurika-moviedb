@@ -15,7 +15,7 @@ const SelectedGenreMovies = ({id}) => {
     useEffect(() => {
         dispatch(genresAction.getById({id:id, page: query.get('page')}));
     }, [dispatch, query, id])
-
+// todo взяти звідси пагінацію на пошук
     return (
         <div className={css.BgMovies}>
             SelectedGenreMovies

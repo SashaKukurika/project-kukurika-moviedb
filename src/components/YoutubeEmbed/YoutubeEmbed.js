@@ -19,8 +19,8 @@ const YoutubeEmbed = (id) => {
         <div className="video-responsive">
             {videoById[0]?.key &&
                 <iframe
-                    width="900"
-                    height="480"
+                    width="1080"
+                    height="520"
                     src={`https://www.youtube.com/embed/${videoById[0]?.key}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

@@ -5,9 +5,15 @@
 .Movie {
     width: 100%;
     display: flex;
-    border: 2px solid black;
+    flex-wrap: wrap;
+    border: 2px solid var(--text-color);
     height: auto;
-    color: black;
+    color: var(--text-color);
+    background: var(--header-background);
+}
+
+.MovieImg {
+    width: 500px;
 }
 
 img {
@@ -26,9 +32,32 @@ img:hover {
     left: 3.5%;
 }
 .MovieGenre{
-    font-size: 20px;
+    color: var(--text-color);
+    background: var(--header-background);
+    text-align: center;
+    font-size: 15px;
     width: auto;
     height: auto;
-    background: yellow;
-    border: 2px solid green;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    margin: 3px;
+    padding: 3px;
+}
+
+.MovieDetails {
+    width: calc(100% - 500px);
+    font-size: 30px;
+    padding-left: 50px;
+}
+
+.MovieYoutube {
+    border-top: 2px solid var(--text-color);
+    margin-bottom: 20px;
+    font-size: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }

@@ -1,11 +1,11 @@
-import { FaArrowUp } from 'react-icons/fa';
+import {FaArrowUp} from 'react-icons/fa';
 
 import css from './ScrollToTopButton.module.css'
 
 const ScrollToTopButton = () => {
 
     const handleClick = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
     return (
@@ -14,7 +14,7 @@ const ScrollToTopButton = () => {
             title="Наверх"
             onClick={handleClick}
         >
-            <FaArrowUp />Go Up<FaArrowUp/>
+            <FaArrowUp/>Go Up<FaArrowUp/>
         </button>
     );
 };

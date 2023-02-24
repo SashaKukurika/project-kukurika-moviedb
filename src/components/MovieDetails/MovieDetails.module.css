@@ -1,5 +1,5 @@
 .MovieDetails {
     display: flex;
-    background: red;
+    background: var(--background-main);
     padding: 50px;
 }
