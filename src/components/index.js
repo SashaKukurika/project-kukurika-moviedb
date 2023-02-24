@@ -8,3 +8,4 @@ export * from './Genres/Genres';
 export * from './YoutubeEmbed/YoutubeEmbed';
 export * from './SelectedGenreMovies/SelectedGenreMovies';
 export * from './SelectedGenreMovie/SelectedGenreMovie';
+export * from './ScrollToTopButton/ScrollToTopButton';

@@ -1,9 +1,11 @@
-import {SearchForm} from "../../components";
+import {ScrollToTopButton, SearchForm} from "../../components";
+import css from './SearchMoviePage.module.css';
 
 const SearchMoviePage = () => {
     return (
-        <div>
+        <div className={css.SearchMoviePage}>
             <SearchForm/>
+            <ScrollToTopButton/>
         </div>
     );
 };

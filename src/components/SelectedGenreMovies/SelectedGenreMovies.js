@@ -3,8 +3,8 @@ import {useEffect} from "react";
 import {useSearchParams} from "react-router-dom";
 
 import {genresAction} from "../../redux";
-import css from "../Movies/Movies.module.css";
 import {SelectedGenreMovie} from "../SelectedGenreMovie/SelectedGenreMovie";
+import css from './SelectedGenreMovies.module.css';
 
 const SelectedGenreMovies = ({id}) => {
 
@@ -17,7 +17,7 @@ const SelectedGenreMovies = ({id}) => {
     }, [dispatch, query, id])
 
     return (
-        <div>
+        <div className={css.BgMovies}>
             SelectedGenreMovies
             <div className={css.Movies}>
                 {genreMovies.map(movie => <SelectedGenreMovie key={movie.id} movie={movie}/>)}

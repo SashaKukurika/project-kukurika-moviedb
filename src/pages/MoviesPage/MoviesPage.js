@@ -1,9 +1,10 @@
-import {Movies} from "../../components";
+import {Movies, ScrollToTopButton} from "../../components";
 
 const MoviesPage = () => {
     return (
         <div>
             <Movies/>
+            <ScrollToTopButton/>
         </div>
     );
 };

@@ -8,6 +8,7 @@ const initialState = {
     loading: null,
     movieById: null,
     searchMovies: [],
+    videoById: []
 }
 
 const getAll = createAsyncThunk(
@@ -28,7 +29,6 @@ const getById = createAsyncThunk(
     async ({id}, {rejectWithValue}) => {
         try {
             const {data} = await moviesService.getById(id);
-            console.log(data);
             return [data];
         } catch (e) {
             return rejectWithValue(e.response.data.errors);
@@ -40,9 +40,21 @@ const searchMovie = createAsyncThunk(
     'movieSlice/searchMovie',
     async ({searchWords}, {rejectWithValue}) => {
         try {
-            console.log(searchWords);
             const {data: {results}} = await moviesService.search(searchWords);
             console.log(results)
+            return results;
+        } catch (e) {
+            return rejectWithValue(e.response.data.errors);
+        }
+    }
+);
+
+const getVideoById = createAsyncThunk(
+    'movieSlice/getVideoById',
+    async (id, {rejectWithValue}) => {
+        try {
+            const {data:{results}} = await moviesService.getVideoById(id);
+            console.log(results);
             return results;
         } catch (e) {
             return rejectWithValue(e.response.data.errors);
@@ -77,6 +89,11 @@ const moviesSlice = createSlice({
                 state.loading = false
                 state.searchMovies = action.payload
             })
+            .addCase(getVideoById.fulfilled, (state, action) => {
+                state.loading = false
+                state.videoById = action.payload;
+
+            })
 
 });
 
@@ -85,7 +102,8 @@ const {reducer: movieReducer} = moviesSlice;
 const movieAction = {
     getAll,
     searchMovie,
-    getById
+    getById,
+    getVideoById
 }
 
 export {

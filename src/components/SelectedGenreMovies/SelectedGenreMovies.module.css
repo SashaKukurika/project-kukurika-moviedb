@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+.BgMovies {
+    background: var(--background-main);
+    padding-top: 20px;
+}
+
+.Movies {
+    display: flex;
+    flex-flow: wrap;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.Pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    height: 70px;
+}
+
+.PageNumber {
+    width: 5%;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    background: var(--header-background);
+    border-radius: 5px;
+    text-align: center;
+    height: 25px;
+    margin: 2px;
+}
+
+.Button {
+    height: 25px;
+    margin: 2px;
+    width: 4%;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    background: var(--header-background);
+    border-radius: 5px;
+}
+
+.Button:disabled {
+    background: var(--button-disable);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

@@ -2,6 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {movieAction} from "../../redux";
 import {MovieDetailsRender} from "../MovieDetailsRender/MovieDetailsRender";
+import css from './MovieDetails.module.css';
 
 const MovieDetails = ({id}) => {
     const dispatch = useDispatch();
@@ -9,10 +10,10 @@ const MovieDetails = ({id}) => {
 
     useEffect(() => {
         dispatch(movieAction.getById({id}));
-    }, [dispatch])
+    }, [dispatch, id])
 
     return (
-        <div>
+        <div className={css.MovieDetails}>
             {movieById && movieById.map(movie => <MovieDetailsRender movie={{movie}} key={movie.id}/>)}
         </div>
     );

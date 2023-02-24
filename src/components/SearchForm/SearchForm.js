@@ -5,6 +5,7 @@ import {searchValidator} from "../../validators";
 import {movieAction} from "../../redux";
 import {useDispatch, useSelector} from "react-redux";
 import {Movie} from "../Movie/Movie";
+import css from './SearchForm.module.css';
 
 const SearchForm = () => {
 
@@ -20,14 +21,16 @@ const SearchForm = () => {
         await dispatch(movieAction.searchMovie(searchWords));
         reset();
     };
-    // todo щоб зникали попередні пошуки
+    // todo pagination
     return (
-        <div>
-            <form onSubmit={handleSubmit(search)}>
-                <input type="text" placeholder={'find movie'} {...register('searchWords')}/>
-                <button>Search</button>
-            </form>
-
+        <div className={css.MainDiv}>
+            <div className={css.FormDiv}>
+                <form onSubmit={handleSubmit(search)}>
+                    <input className={css.FormInput} type="text"
+                           placeholder={'Find movie'} {...register('searchWords')}/>
+                    <button className={css.FormBtn}>Search</button>
+                </form>
+            </div>
             {searchMovies && searchMovies.map(movie => <Movie key={movie.id} movie={movie}/>)}
         </div>
     );

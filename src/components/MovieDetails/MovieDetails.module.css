@@ -1,0 +1,5 @@
+.MovieDetails {
+    display: flex;
+    background: red;
+    padding: 50px;
+}

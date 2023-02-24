@@ -1,0 +1,13 @@
+.ScrollBtn {
+    height: 50px;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    background: var(--background-main);
+    color: var(--text-color);
+}
+
+.ScrollBtn:hover {
+    background-color: var(--text-color);
+    color: var(--background-main);
+}

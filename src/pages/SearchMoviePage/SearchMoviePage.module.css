@@ -1,0 +1,9 @@
+.SearchMoviePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: var(--background-main);
+}
