@@ -27,4 +27,9 @@ html[data-theme='light'] {
   --background-image-linear-gradient: #894595;
   --background-image-linear-gradient-2: #3700ff;
   --box-shadow: rgb(35, 28, 202);
+  --header-background: #894595;
+  --text-color: black;
+  --button-hover-text: black;
+  --background-main: snow;
+  --button-disable: rgb(50, 54, 58);
 }

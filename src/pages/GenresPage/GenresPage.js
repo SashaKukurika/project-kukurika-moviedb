@@ -1,6 +1,7 @@
-import {Genres} from "../../components";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+
+import {Genres} from "../../components";
 import {genresAction} from "../../redux";
 import css from './GenresPage.module.css';
 
@@ -15,7 +16,7 @@ const GenresPage = () => {
 
     return (
         <div className={css.GenresPage}>
-            {genresList && genresList.map(genre => <Genres genre={genre} key={genre.id}/> )}
+            {genresList && genresList.map(genre => <Genres genre={genre} key={genre.id}/>)}
         </div>
     );
 };

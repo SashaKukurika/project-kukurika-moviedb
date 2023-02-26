@@ -26,12 +26,13 @@ img:hover {
     border-radius: 0px;
 }
 
-.MovieGenres{
+.MovieGenres {
     position: absolute;
-    top: 17%;
+    top: 150px;
     left: 3.5%;
 }
-.MovieGenre{
+
+.MovieGenre {
     color: var(--text-color);
     background: var(--header-background);
     text-align: center;

@@ -10,7 +10,7 @@ a {
     text-decoration: none;
 }
 
-.headerLink {
+.HeaderLink {
     position: relative;
     display: inline-block;
     margin: 5px;
@@ -28,7 +28,7 @@ a {
     box-shadow: inset 0 0 0 0 var(--text-color);
 }
 
-.headerLink:hover {
+.HeaderLink:hover {
     color: var(--header-background);
     box-shadow: inset 0 -100px 0 0 var(--text-color);
 }
@@ -51,7 +51,7 @@ a {
     width: 45px;
 }
 
-.btn {
+.Btn {
     appearance: none;
     background-color: transparent;
     border: 2px solid var(--text-color);
@@ -79,15 +79,9 @@ a {
     will-change: transform;
 }
 
-.btn:hover {
+.Btn:hover {
     color: var(--button-hover-text);
     background-color: var(--header-background);
     box-shadow: var(--box-shadow) 0 8px 15px;
     transform: translateY(-2px);
 }
-
-/*todo додати активну через вибрану тему якщо встигну*/
-/*.btn:active {*/
-/*    box-shadow: none;*/
-/*    transform: translateY(0);*/
-/*}*/

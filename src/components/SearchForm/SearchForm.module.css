@@ -5,7 +5,7 @@
     background: var(--background-main);
 }
 
-.FormDiv{
+.FormDiv {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -17,7 +17,7 @@
     border-radius: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     color: #555;
-    border: 2px solid #00FF7F;
+    border: 2px solid var(--text-color);
     padding: 10px;
     font-size: 16px;
     position: relative;
@@ -35,7 +35,7 @@
     padding: 15px 30px;
     font-size: 14px;
     color: #fff;
-    background: #00FF7F;
+    background: var(--text-color);
     position: relative;
     overflow: hidden;
 }

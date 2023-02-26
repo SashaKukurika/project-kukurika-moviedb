@@ -13,13 +13,15 @@ import {
 
 
 const App = () => {
-    // todo кнопка відразу до гори, проблема з подальшими переходами по жанрах
+
     return (
         <Routes>
             <Route path={'/'} element={<MainLayout/>}>
 
+                <Route index element={<MoviesPage/>}/>
                 <Route path={'movies'} element={<MoviesPage/>}/>
                 <Route path={'movies/:id'} element={<MovieDetailsPage/>}/>
+                <Route path={'/:id'} element={<MovieDetailsPage/>}/>
 
                 <Route path={'genres'} element={<GenresPage/>}/>
                 <Route path={'genres/:id'} element={<SelectedGenresPage/>}/>

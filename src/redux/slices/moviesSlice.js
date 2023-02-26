@@ -4,8 +4,6 @@ import {moviesService} from "../../services";
 
 const initialState = {
     movies: [],
-    errors: null,
-    loading: null,
     movieById: null,
     searchMovies: [],
     videoById: []
@@ -15,8 +13,7 @@ const getAll = createAsyncThunk(
     'movieSlice/getAll',
     async ({page}, {rejectWithValue}) => {
         try {
-            const {data:{results}} = await moviesService.getAll(page);
-            console.log(results);
+            const {data: {results}} = await moviesService.getAll(page);
             return results;
         } catch (e) {
             return rejectWithValue(e.response.data.errors);
@@ -41,7 +38,6 @@ const searchMovie = createAsyncThunk(
     async ({searchWords}, {rejectWithValue}) => {
         try {
             const {data: {results}} = await moviesService.search(searchWords);
-            console.log(results)
             return results;
         } catch (e) {
             return rejectWithValue(e.response.data.errors);
@@ -53,8 +49,7 @@ const getVideoById = createAsyncThunk(
     'movieSlice/getVideoById',
     async (id, {rejectWithValue}) => {
         try {
-            const {data:{results}} = await moviesService.getVideoById(id);
-            console.log(results);
+            const {data: {results}} = await moviesService.getVideoById(id);
             return results;
         } catch (e) {
             return rejectWithValue(e.response.data.errors);
@@ -72,13 +67,6 @@ const moviesSlice = createSlice({
                 state.loading = false
                 state.movies = action.payload;
 
-            })
-            .addCase(getAll.rejected, (state, action) => {
-                state.errors = action.payload
-                state.loading = false
-            })
-            .addCase(getAll.pending, (state) => {
-                state.loading = true
             })
             .addCase(getById.fulfilled, (state, action) => {
                 state.loading = false

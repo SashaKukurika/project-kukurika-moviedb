@@ -1,1 +1,1 @@
-export * from './searchValidator'
+export * from './searchValidator';

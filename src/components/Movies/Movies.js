@@ -24,11 +24,6 @@ const Movies = () => {
 
             <div className={css.Pagination}>
 
-                {/*<button disabled={!(+query.get('page') > 1)}*/}
-                {/*        onClick={() => setQuery(query => ({page: +query.get('page') + 5}))}>*/}
-                {/*    {+query.get('page')-5}*/}
-                {/*</button>*/}
-
                 <button className={css.Button} disabled={!(+query.get('page') > 1)}
                         onClick={() => setQuery(query => ({page: +query.get('page') - 1}))}>
                     {'<'}
@@ -41,10 +36,6 @@ const Movies = () => {
                     {'>'}
                 </button>
 
-                {/*<button disabled={!(+query.get('page') < 500)}*/}
-                {/*        onClick={() => setQuery(query => ({page: +query.get('page') + 5}))}>*/}
-                {/*    {+query.get('page')+5}*/}
-                {/*</button>*/}
             </div>
         </div>
     );

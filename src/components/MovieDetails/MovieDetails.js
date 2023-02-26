@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+
 import {movieAction} from "../../redux";
 import {MovieDetailsRender} from "../MovieDetailsRender/MovieDetailsRender";
 import css from './MovieDetails.module.css';

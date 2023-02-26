@@ -5,5 +5,3 @@ const searchValidator = Joi.object({
 });
 
 export {searchValidator}
-
-// regex(/([a-z]{2})-([A-Z]{2})/)

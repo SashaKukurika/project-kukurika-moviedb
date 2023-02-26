@@ -1,5 +1,6 @@
-import css from './Genres.module.css'
 import {Link} from "react-router-dom";
+
+import css from './Genres.module.css'
 
 const Genres = ({genre}) => {
 

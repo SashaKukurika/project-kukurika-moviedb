@@ -1,9 +1,9 @@
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
+import {useDispatch, useSelector} from "react-redux";
 
 import {searchValidator} from "../../validators";
 import {movieAction} from "../../redux";
-import {useDispatch, useSelector} from "react-redux";
 import {Movie} from "../Movie/Movie";
 import css from './SearchForm.module.css';
 
@@ -12,7 +12,7 @@ const SearchForm = () => {
     const dispatch = useDispatch();
     const {searchMovies} = useSelector(state => state.movies);
 
-    const {register, handleSubmit, reset, formState: {errors}} = useForm({
+    const {register, handleSubmit, reset} = useForm({
         mode: "onSubmit",
         resolver: joiResolver(searchValidator)
     });
@@ -21,7 +21,7 @@ const SearchForm = () => {
         await dispatch(movieAction.searchMovie(searchWords));
         reset();
     };
-    // todo pagination
+
     return (
         <div className={css.MainDiv}>
             <div className={css.FormDiv}>
